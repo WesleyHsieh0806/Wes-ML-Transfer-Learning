@@ -401,19 +401,19 @@ resnet34_label_predictor.load_state_dict(torch.load(
 resnet34_feature_extractor.eval()
 resnet34_label_predictor.eval()
 # Model3: Vgg16
-vgg16_512_2_feature_extractor = vgg16_512_2_FeatureExtractor()
-vgg16_512_2_label_predictor = vgg16_512_2_LabelPredictor()
+# vgg16_512_2_feature_extractor = vgg16_512_2_FeatureExtractor()
+# vgg16_512_2_label_predictor = vgg16_512_2_LabelPredictor()
 
-print("\nTotal # of parameters of Model 3 Feature Extractor:{}".format(
-    sum(p.numel() for p in vgg16_512_2_feature_extractor.parameters())))
-print("Total # of parameters of Model 3 label Predictor:{}".format(
-    sum(p.numel() for p in vgg16_512_2_label_predictor.parameters())))
-vgg16_512_feature_extractor.load_state_dict(torch.load(
-    './result/vgg16_512_2/vgg16_extractor_model.bin'))
-vgg16_512_label_predictor.load_state_dict(torch.load(
-    './result/vgg16_512_2/vgg16_predictor_model.bin'))
-vgg16_512_2_feature_extractor.eval()
-vgg16_512_2_label_predictor.eval()
+# print("\nTotal # of parameters of Model 3 Feature Extractor:{}".format(
+#     sum(p.numel() for p in vgg16_512_2_feature_extractor.parameters())))
+# print("Total # of parameters of Model 3 label Predictor:{}".format(
+#     sum(p.numel() for p in vgg16_512_2_label_predictor.parameters())))
+# vgg16_512_feature_extractor.load_state_dict(torch.load(
+#     './result/vgg16_512_2/vgg16_extractor_model.bin'))
+# vgg16_512_label_predictor.load_state_dict(torch.load(
+#     './result/vgg16_512_2/vgg16_predictor_model.bin'))
+# vgg16_512_2_feature_extractor.eval()
+# vgg16_512_2_label_predictor.eval()
 
 for i, (test_data, _) in enumerate(test_dataloader):
     test_data = test_data.cuda()
